@@ -1,5 +1,35 @@
 @use "base" as *;
 
+/*
+    4.
+    Gebruik nesting om:
+      Gebruik verder de eerder gedefinieerde variabelen om de lettergrootte en de tekstkleur aan te passen.
+    - Zorg er met een hover effect voor dat de tekstkleur van de anchor-link binnen het list-item wijzigt.
+
+    5.  Maak een mixin margin-padding die ervoor zorgt dat de elementen nav, section en footer
+        een margin en padding krijgen van 3px. Gebruik waar het kan de klasse namen. 
+    6.
+        Pas de mixin aan zodat je er een argument aan kan meegeven. Dit argument is de waarde voor de padding.
+        Voor de nav is dat 5px, voor de section 3px en de footer 3px;
+    7.
+        Definieer een hover effect binnen het footer element (gebruik hiervoor nesting). 
+        Zorg ervoor dat de tekstkleur en de achtergrondkleur wijzigt.
+        Vervolgens pas je een transition toe op de kleur van 0,5s én op de achtergrondkleur van 1s. 
+        Maak hiervoor gebruik van een mixin waarbij je meerdere waardes kan meegeven als argument.
+
+    8.
+        Maak een klasse “background-primary” (die in de HTML niet zal gebruikt worden) met volgende eigenschappen:
+            - Achtergrondkleur naar keuze.
+            - Tekstkleur naar keuze.
+            - Gecentreerde tekst.
+        Pas deze stijl via een extend toe op alle paragrafen.
+    9.
+        Maak een functie “increaseFontSize” Deze functie heeft een parameter $size en geeft de waarde hiervan, vermenigvuldigd met 2, terug.
+        Roep deze functie aan in de paragrafen voor de lettergrootte.
+    10.
+        PARTIALS - OK.
+*/
+
 // NAVBAR
 .nav { 
     padding: .6rem 1rem;
@@ -13,6 +43,7 @@
         .nav-listitem {
             display: inline-block;
             margin-left: .6rem;
+            font-size: $font-p;
             .nav-link {
                 text-decoration: none;
                 color: $color-primary;
