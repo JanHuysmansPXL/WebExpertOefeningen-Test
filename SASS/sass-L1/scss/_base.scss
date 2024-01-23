@@ -1,0 +1,38 @@
+$color-light: #f9f9f9;
+$color-black: #000;
+$color-dark: #262626;
+$color-primary: #003459;
+$color-secondary: #bbb;
+
+$font-dancingScript: 'Dancing Script', cursive;
+$font-josefinSans: 'Josefin Sans', sans-serif;
+$font-nunito: 'Nunito', sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $color-light;
+}
+
+@mixin flexLayout() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin textStyles() {
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+@mixin positioning($topValue) {
+    position: absolute;
+    top: $topValue;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
