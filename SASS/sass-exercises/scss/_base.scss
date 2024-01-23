@@ -5,3 +5,46 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.container-fluid {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+// TEXT VARIABLES
+
+$color-primary: #344e41;
+$color-secondary: #3a5a40;
+$color-tertiary: #588157;
+$color-soft: #a3b18a;
+$color-light: #dad7cd;
+$color-white: #fff;
+
+// FONT SIZE VARIABLES
+
+$font-display: 160px;
+$font-h1: 3.815rem;
+$font-h2: 3.052rem;
+$font-h3: 2.441rem;
+$font-h4: 1.953rem;
+$font-h5: 1.953rem;
+$font-h6: 1.953rem;
+$font-p: 1rem;
+$font-sm: 0.8rem;
+$font-xs:0.64rem;
+
+/* SCREEN SIZES */
+$screen-xs: 320px;
+$screen-sm: 480px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+$screen-xxl: 1400px;

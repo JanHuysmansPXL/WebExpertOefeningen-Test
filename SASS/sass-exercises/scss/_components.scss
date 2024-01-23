@@ -1,0 +1,62 @@
+@use "base" as *;
+
+// NAVBAR
+.nav { 
+    padding: .6rem 1rem;
+    background-color: $color-light;
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        list-style: none;
+        .nav-listitem {
+            display: inline-block;
+            margin-left: .6rem;
+            .nav-link {
+                text-decoration: none;
+                color: $color-primary;
+            }
+            &:first-of-type {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+// BANNER SECTION
+
+.banner {
+    margin: 2rem auto;
+    background-color: $color-white;
+    min-height: 70vh;
+    text-align: center;
+    .banner-heading {
+        margin: 2rem auto;
+        font-size: $font-h3;
+        color: $color-primary;    
+    }
+    .banner-text {
+        margin: 0 auto;
+        font-size: $font-p;
+        color: $color-primary;
+        max-width: 60ch;
+        margin-top: .6rem;
+    }
+}
+
+.footer {
+    margin-top: 5rem;
+    background-color: $color-primary;
+    padding: 1.2rem 1rem;
+    text-align: center;
+    .footer-subheading {
+        font-size: $font-h4;
+        color: $color-white;
+    }
+    .footer-text {
+        margin-top: .6rem;
+        font-size: $font-p;
+        color: $color-white;
+    }
+}
