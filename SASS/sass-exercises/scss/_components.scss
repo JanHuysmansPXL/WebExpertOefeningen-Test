@@ -43,7 +43,7 @@ h4 {
             .nav-link {
                 text-decoration: none;
                 color: map-get($colors, white);
-                @include transitionProperty(color, .3s, ease-in-out); 
+                @include transitionProperty(all, .3s, ease-in-out); 
                 &:hover {
                     padding-bottom: $padding-xl;
                     border-bottom: 1px solid map-get($colors, white);

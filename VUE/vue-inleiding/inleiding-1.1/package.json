@@ -1,0 +1,14 @@
+{
+  "name": "inleiding-1.1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "prod": "sass scss/main.scss:css/main.css",
+    "dev": "sass --watch scss/styles.scss:css/styles.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
