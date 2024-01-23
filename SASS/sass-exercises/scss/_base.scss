@@ -1,8 +1,10 @@
+$font-dm-sans: 'DM Sans', Arial, Helvetica, sans-serif;
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: $font-dm-sans;
 }
 
 .container-fluid {
@@ -19,14 +21,25 @@
     padding: 0 1rem;
 }
 
-// TEXT VARIABLES
+// TEXT VARIABLES -- MAP
 
-$color-primary: #344e41;
-$color-secondary: #3a5a40;
-$color-tertiary: #588157;
-$color-soft: #a3b18a;
-$color-light: #dad7cd;
-$color-white: #fff;
+$colors : (
+    primary: #344e41,
+    secondary: #3a5a40,
+    tertiary: #588157,
+    soft: #a3b18a,
+    light: #dad7cd,
+    white: #fff
+);
+
+// 4.2 -- FOR EACH LOOP VOOR KLEUREN
+
+@each $name, $color in $colors {
+    bg-#{name} {
+        background-color: #{$color};
+    }
+}
+
 
 // FONT SIZE VARIABLES
 
@@ -36,10 +49,73 @@ $font-h2: 3.052rem;
 $font-h3: 2.441rem;
 $font-h4: 1.953rem;
 $font-h5: 1.953rem;
-$font-h6: 1.953rem;
+$font-h6: 1.172rem;
 $font-p: 1rem;
 $font-sm: 0.8rem;
 $font-xs:0.64rem;
+
+/* SANS SERIF - DM SANS -> UPDATE TO MADE SANS*/
+
+.txt-ss-h0 {
+    font-family: $font-dm-sans;
+    font-size: 140px;
+    line-height: 120%;
+    font-weight: 500;
+}
+.txt-ss-h1 {
+    font-family: $font-dm-sans;
+    font-size: 100px;
+    line-height: 120%;
+    font-weight: 500;
+
+}
+.txt-ss-h2 {
+    font-family: $font-dm-sans;
+    font-size: 77px;
+    line-height: 120%;
+    font-weight: 500;
+
+}
+.txt-ss-h3 {
+    font-family: $font-dm-sans;
+    font-size: 60px;
+    line-height: 120%;
+    font-weight: 500;
+
+}
+.txt-ss-h4 {
+    font-family: $font-dm-sans;
+    font-size: 36px;
+    line-height: 120%;
+    font-weight: 500;
+
+}
+.txt-ss-sub1 {
+    font-family: $font-dm-sans;
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 500;
+}
+.txt-ss-sub2 {
+    font-family: $font-dm-sans;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 500;
+
+}
+.txt-ss-body1 {
+    font-family: $font-dm-sans;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 300;
+
+}
+.txt-ss-body2 {
+    font-family: $font-dm-sans;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 300;
+}
 
 /* SCREEN SIZES */
 $screen-xs: 320px;
@@ -48,3 +124,82 @@ $screen-md: 768px;
 $screen-lg: 992px;
 $screen-xl: 1200px;
 $screen-xxl: 1400px;
+
+// PADDING / MARGIN - SETUP
+$margin-xs: .6rem;
+$margin-sm: 1rem;
+$margin-md: 2rem;
+$margin-lg: 3rem;
+$margin-xl: 5rem;
+
+$padding-xs: .5rem;
+$padding-sm: 1rem;
+$padding-md: 2rem;
+$padding-lg: 3rem;
+$padding-xl: 5rem;
+
+/* MARGIN / PADDING - UTILITY CLASSES*/
+
+.mx-auto { margin: 0 auto }
+
+.mt-0 { margin-top: 0}
+.mt-xs { margin-top: $margin-xs;}
+.mt-sm { margin-top: $margin-sm;}
+.mt-md { margin-top: $margin-md;}
+.mt-lg { margin-top: $margin-lg;}
+.mt-xl { margin-top: $margin-xl;}
+
+.mb-0 { margin-bottom: 0}
+.mb-xs { margin-bottom: $margin-xs;}
+.mb-sm { margin-bottom: $margin-sm;}
+.mb-md { margin-bottom: $margin-md;}
+.mb-lg { margin-bottom: $margin-lg;}
+.mb-xl { margin-bottom: $margin-xl;}
+
+.ms-0 { margin-top: 0}
+.ms-xs { margin-left: $margin-xs;}
+.ms-sm { margin-left: $margin-sm;}
+.ms-md { margin-left: $margin-md;}
+.ms-lg { margin-left: $margin-lg;}
+.ms-xl { margin-left: $margin-xl;}
+
+.me-0 { margin-right: 0}
+.me-xs { margin-right: $margin-xs;}
+.me-sm { margin-right: $margin-sm;}
+.me-md { margin-right: $margin-md;}
+.me-lg { margin-right: $margin-lg;}
+.me-xl { margin-right: $margin-xl;}
+
+.p-0 { padding: 0}
+.p-xs { padding: $padding-xs;}
+.p-sm { padding: $padding-sm;}
+.p-md { padding: $padding-md;}
+.p-lg { padding: $padding-lg;}
+.p-xl { padding: $padding-xl;}
+
+.pt-0 { padding-top: 0}
+.pt-xs { padding-top: $padding-xs;}
+.pt-sm { padding-top: $padding-sm;}
+.pt-md { padding-top: $padding-md;}
+.pt-lg { padding-top: $padding-lg;}
+.pt-xl { padding-top: $padding-xl;}
+
+.pb-0 { padding-bottom: 0}
+.pb-xs { padding-bottom: $padding-xs;}
+.pb-sm { padding-bottom: $padding-sm;}
+.pb-md { padding-bottom: $padding-md;}
+.pb-lg { padding-bottom: $padding-lg;}
+.pb-xl { padding-bottom: $padding-xl;}
+
+// .8 EXTEND MET PLACEHOLDER SELECTOR
+/*
+    - Achtergrondkleur naar keuze.
+    - Tekstkleur naar keuze.
+    - Gecentreerde tekst.
+*/
+
+// FUNCTIONS
+
+@function increaseFontSize($size) {
+    @return $size * 2;
+}

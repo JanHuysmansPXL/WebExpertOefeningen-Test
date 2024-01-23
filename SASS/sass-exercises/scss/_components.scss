@@ -1,39 +1,35 @@
 @use "base" as *;
+@use "mixins" as *;
 
-/*
-    4.
-    Gebruik nesting om:
-      Gebruik verder de eerder gedefinieerde variabelen om de lettergrootte en de tekstkleur aan te passen.
-    - Zorg er met een hover effect voor dat de tekstkleur van de anchor-link binnen het list-item wijzigt.
 
-    5.  Maak een mixin margin-padding die ervoor zorgt dat de elementen nav, section en footer
-        een margin en padding krijgen van 3px. Gebruik waar het kan de klasse namen. 
-    6.
-        Pas de mixin aan zodat je er een argument aan kan meegeven. Dit argument is de waarde voor de padding.
-        Voor de nav is dat 5px, voor de section 3px en de footer 3px;
-    7.
-        Definieer een hover effect binnen het footer element (gebruik hiervoor nesting). 
-        Zorg ervoor dat de tekstkleur en de achtergrondkleur wijzigt.
-        Vervolgens pas je een transition toe op de kleur van 0,5s én op de achtergrondkleur van 1s. 
-        Maak hiervoor gebruik van een mixin waarbij je meerdere waardes kan meegeven als argument.
+//  8. OK -- Pas deze stijl via een 'EXTEND' toe op alle paragrafen.
+//  Het percentage-teken geeft aan dat je werkt met een placeholder selector.
+%background-setup {
+    background-color: map-get($colors, tertiary);
+    color: map-get($colors, primary);
+    text-align: center;
+}
 
-    8.
-        Maak een klasse “background-primary” (die in de HTML niet zal gebruikt worden) met volgende eigenschappen:
-            - Achtergrondkleur naar keuze.
-            - Tekstkleur naar keuze.
-            - Gecentreerde tekst.
-        Pas deze stijl via een extend toe op alle paragrafen.
-    9.
-        Maak een functie “increaseFontSize” Deze functie heeft een parameter $size en geeft de waarde hiervan, vermenigvuldigd met 2, terug.
-        Roep deze functie aan in de paragrafen voor de lettergrootte.
-    10.
-        PARTIALS - OK.
-*/
+//  Toepassen EXTEND
+h4 {
+    @extend %background-setup;
+}
+
+/*  9.
+    Maak een functie “increaseFontSize” (Zie BASE)
+    Deze functie heeft een parameter $size en -- geeft de waarde hiervan vermenigvuldigd met 2 -- terug.
+    Roep deze functie aan in de paragrafen voor de lettergrootte. */
+
+    // Your other styles
+    p {
+        font-size: increaseFontSize(1rem);
+        // Other paragraph styles...
+    }
 
 // NAVBAR
 .nav { 
-    padding: .6rem 1rem;
-    background-color: $color-light;
+    @include blockPadding(sm);
+    background-color: map-get($colors, primary);
     .nav-list {
         display: flex;
         flex-direction: row;
@@ -46,7 +42,13 @@
             font-size: $font-p;
             .nav-link {
                 text-decoration: none;
-                color: $color-primary;
+                color: map-get($colors, white);
+                @include transitionProperty(color, .3s, ease-in-out); 
+                &:hover {
+                    padding-bottom: $padding-xl;
+                    border-bottom: 1px solid map-get($colors, white);
+                    color: map-get($colors, soft);
+                }
             }
             &:first-of-type {
                 margin-left: 0;
@@ -58,36 +60,52 @@
 // BANNER SECTION
 
 .banner {
-    margin: 2rem auto;
-    background-color: $color-white;
+    @include blockPadding(md);
+    background-color: map-get($colors, white);
     min-height: 70vh;
     text-align: center;
     .banner-heading {
-        margin: 2rem auto;
+        margin: $margin-md auto;
         font-size: $font-h3;
-        color: $color-primary;    
+        color: map-get($colors, primary);;    
     }
     .banner-text {
         margin: 0 auto;
         font-size: $font-p;
-        color: $color-primary;
+        color: map-get($colors, primary);
         max-width: 60ch;
-        margin-top: .6rem;
+        margin-top: $margin-sm;
     }
 }
 
+//7. -- OK
+// Definieer een hover effect binnen het footer element (gebruik hiervoor nesting). 
+ //   - Zorg ervoor dat de tekstkleur en de achtergrondkleur wijzigt.
+ //   - Vervolgens pas je een transition toe op de kleur van 0,5s én op de achtergrondkleur van 1s. 
+ //   - Maak hiervoor gebruik van een mixin waarbij je meerdere waardes kan meegeven als argument.
+
 .footer {
-    margin-top: 5rem;
-    background-color: $color-primary;
-    padding: 1.2rem 1rem;
+    @include blockPadding(lg);
+    background-color: map-get($colors, soft);
+    color: map-get($colors, white);
     text-align: center;
+
+    // TRANSITIONS BASED ON MIXINS
+    //COLOR
+    @include transitionProperty(color, .5s, linear); 
+    // BACKGROUND COLOR
+    @include transitionProperty(background-color, 3s, ease-in-out);
+
+    &:hover{
+        background-color: map-get($colors, secondary);
+        color: map-get($colors, soft);        
+    }
     .footer-subheading {
         font-size: $font-h4;
-        color: $color-white;
     }
     .footer-text {
-        margin-top: .6rem;
+        margin-top: $margin-sm;
         font-size: $font-p;
-        color: $color-white;
     }
 }
+

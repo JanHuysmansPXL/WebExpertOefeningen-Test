@@ -1,0 +1,31 @@
+@use "base" as *;
+
+// MIXINS
+
+// MIXIN MET PARAMETER  --  BLOCK PADDING VOOR ELEMENTEN.
+@mixin blockPadding($size) {
+    @if ($size == "sm") { padding: $padding-sm $padding-sm; } 
+    @else if ($size == "md") { padding: $padding-md $padding-sm; } 
+    @else if ($size == "lg") { padding: $padding-lg $padding-sm; } 
+    @else { padding: 0 0;} 
+}
+
+// MIXIN 8.0 - TRANSITION TIMING (DUO)
+
+// Mixin for individual transitions
+@mixin transitionProperty($property, $duration, $timingFunction) {
+    transition-property: $property;
+    transition-duration: $duration;
+    transition-timing-function: $timingFunction;
+}
+
+// Mixin -- Margin Padding versie Robin
+@mixin margin-padding($padding) {
+    margin: 3px;
+    padding: $padding;
+}
+
+// Mixin -- ColorTransition
+@mixin colorTransition($params...) {
+    transition: $params;
+}

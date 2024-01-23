@@ -3,7 +3,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
 }
 
 .container-fluid {
@@ -20,39 +20,290 @@
   padding: 0 1rem;
 }
 
-/* SCREEN SIZES */
-/*
-    4.
-    Gebruik nesting om:
-      Gebruik verder de eerder gedefinieerde variabelen om de lettergrootte en de tekstkleur aan te passen.
-    - Zorg er met een hover effect voor dat de tekstkleur van de anchor-link binnen het list-item wijzigt.
+bg-name {
+  background-color: #344e41;
+}
 
-    5.  Maak een mixin margin-padding die ervoor zorgt dat de elementen nav, section en footer
-        een margin en padding krijgen van 3px. Gebruik waar het kan de klasse namen. 
-    6.
-        Pas de mixin aan zodat je er een argument aan kan meegeven. Dit argument is de waarde voor de padding.
-        Voor de nav is dat 5px, voor de section 3px en de footer 3px;
-    7.
-        Definieer een hover effect binnen het footer element (gebruik hiervoor nesting). 
-        Zorg ervoor dat de tekstkleur en de achtergrondkleur wijzigt.
-        Vervolgens pas je een transition toe op de kleur van 0,5s én op de achtergrondkleur van 1s. 
-        Maak hiervoor gebruik van een mixin waarbij je meerdere waardes kan meegeven als argument.
+bg-name {
+  background-color: #3a5a40;
+}
 
-    8.
-        Maak een klasse “background-primary” (die in de HTML niet zal gebruikt worden) met volgende eigenschappen:
-            - Achtergrondkleur naar keuze.
-            - Tekstkleur naar keuze.
-            - Gecentreerde tekst.
-        Pas deze stijl via een extend toe op alle paragrafen.
-    9.
-        Maak een functie “increaseFontSize” Deze functie heeft een parameter $size en geeft de waarde hiervan, vermenigvuldigd met 2, terug.
-        Roep deze functie aan in de paragrafen voor de lettergrootte.
-    10.
-        PARTIALS - OK.
-*/
-.nav {
-  padding: 0.6rem 1rem;
+bg-name {
+  background-color: #588157;
+}
+
+bg-name {
+  background-color: #a3b18a;
+}
+
+bg-name {
   background-color: #dad7cd;
+}
+
+bg-name {
+  background-color: #fff;
+}
+
+/* SANS SERIF - DM SANS -> UPDATE TO MADE SANS*/
+.txt-ss-h0 {
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  font-size: 140px;
+  line-height: 120%;
+  font-weight: 500;
+}
+
+.txt-ss-h1 {
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  line-height: 120%;
+  font-weight: 500;
+}
+
+.txt-ss-h2 {
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  font-size: 77px;
+  line-height: 120%;
+  font-weight: 500;
+}
+
+.txt-ss-h3 {
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  font-size: 60px;
+  line-height: 120%;
+  font-weight: 500;
+}
+
+.txt-ss-h4 {
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  line-height: 120%;
+  font-weight: 500;
+}
+
+.txt-ss-sub1 {
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 500;
+}
+
+.txt-ss-sub2 {
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 500;
+}
+
+.txt-ss-body1 {
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+}
+
+.txt-ss-body2 {
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 300;
+}
+
+/* SCREEN SIZES */
+/* MARGIN / PADDING - UTILITY CLASSES*/
+.mx-auto {
+  margin: 0 auto;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-xs {
+  margin-top: 0.6rem;
+}
+
+.mt-sm {
+  margin-top: 1rem;
+}
+
+.mt-md {
+  margin-top: 2rem;
+}
+
+.mt-lg {
+  margin-top: 3rem;
+}
+
+.mt-xl {
+  margin-top: 5rem;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-xs {
+  margin-bottom: 0.6rem;
+}
+
+.mb-sm {
+  margin-bottom: 1rem;
+}
+
+.mb-md {
+  margin-bottom: 2rem;
+}
+
+.mb-lg {
+  margin-bottom: 3rem;
+}
+
+.mb-xl {
+  margin-bottom: 5rem;
+}
+
+.ms-0 {
+  margin-top: 0;
+}
+
+.ms-xs {
+  margin-left: 0.6rem;
+}
+
+.ms-sm {
+  margin-left: 1rem;
+}
+
+.ms-md {
+  margin-left: 2rem;
+}
+
+.ms-lg {
+  margin-left: 3rem;
+}
+
+.ms-xl {
+  margin-left: 5rem;
+}
+
+.me-0 {
+  margin-right: 0;
+}
+
+.me-xs {
+  margin-right: 0.6rem;
+}
+
+.me-sm {
+  margin-right: 1rem;
+}
+
+.me-md {
+  margin-right: 2rem;
+}
+
+.me-lg {
+  margin-right: 3rem;
+}
+
+.me-xl {
+  margin-right: 5rem;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.p-xs {
+  padding: 0.5rem;
+}
+
+.p-sm {
+  padding: 1rem;
+}
+
+.p-md {
+  padding: 2rem;
+}
+
+.p-lg {
+  padding: 3rem;
+}
+
+.p-xl {
+  padding: 5rem;
+}
+
+.pt-0 {
+  padding-top: 0;
+}
+
+.pt-xs {
+  padding-top: 0.5rem;
+}
+
+.pt-sm {
+  padding-top: 1rem;
+}
+
+.pt-md {
+  padding-top: 2rem;
+}
+
+.pt-lg {
+  padding-top: 3rem;
+}
+
+.pt-xl {
+  padding-top: 5rem;
+}
+
+.pb-0 {
+  padding-bottom: 0;
+}
+
+.pb-xs {
+  padding-bottom: 0.5rem;
+}
+
+.pb-sm {
+  padding-bottom: 1rem;
+}
+
+.pb-md {
+  padding-bottom: 2rem;
+}
+
+.pb-lg {
+  padding-bottom: 3rem;
+}
+
+.pb-xl {
+  padding-bottom: 5rem;
+}
+
+/*
+    - Achtergrondkleur naar keuze.
+    - Tekstkleur naar keuze.
+    - Gecentreerde tekst.
+*/
+h4 {
+  background-color: #588157;
+  color: #344e41;
+  text-align: center;
+}
+
+/*  9.
+    Maak een functie “increaseFontSize” (Zie BASE)
+    Deze functie heeft een parameter $size en -- geeft de waarde hiervan vermenigvuldigd met 2 -- terug.
+    Roep deze functie aan in de paragrafen voor de lettergrootte. */
+p {
+  font-size: 2rem;
+}
+
+.nav {
+  padding: 1rem 1rem;
+  background-color: #344e41;
 }
 .nav .nav-list {
   display: flex;
@@ -68,14 +319,22 @@
 }
 .nav .nav-list .nav-listitem .nav-link {
   text-decoration: none;
-  color: #344e41;
+  color: #fff;
+  transition-property: color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+.nav .nav-list .nav-listitem .nav-link:hover {
+  padding-bottom: 5rem;
+  border-bottom: 1px solid #fff;
+  color: #a3b18a;
 }
 .nav .nav-list .nav-listitem:first-of-type {
   margin-left: 0;
 }
 
 .banner {
-  margin: 2rem auto;
+  padding: 2rem 1rem;
   background-color: #fff;
   min-height: 70vh;
   text-align: center;
@@ -90,23 +349,31 @@
   font-size: 1rem;
   color: #344e41;
   max-width: 60ch;
-  margin-top: 0.6rem;
+  margin-top: 1rem;
 }
 
 .footer {
-  margin-top: 5rem;
-  background-color: #344e41;
-  padding: 1.2rem 1rem;
+  padding: 3rem 1rem;
+  background-color: #a3b18a;
+  color: #fff;
   text-align: center;
+  transition-property: color;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+  transition-property: background-color;
+  transition-duration: 3s;
+  transition-timing-function: ease-in-out;
+}
+.footer:hover {
+  background-color: #3a5a40;
+  color: #a3b18a;
 }
 .footer .footer-subheading {
   font-size: 1.953rem;
-  color: #fff;
 }
 .footer .footer-text {
-  margin-top: 0.6rem;
+  margin-top: 1rem;
   font-size: 1rem;
-  color: #fff;
 }
 
 /*# sourceMappingURL=main.css.map */
