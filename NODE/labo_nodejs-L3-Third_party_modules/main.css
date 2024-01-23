@@ -1,0 +1,29 @@
+.container {
+    width: 100%;
+	max-width: 1280px;
+    margin:auto;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.gallery-item {
+    width: 33%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.gallery-item a {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.gallery-image {
+    width: 80%;
+    margin: auto;
+}
