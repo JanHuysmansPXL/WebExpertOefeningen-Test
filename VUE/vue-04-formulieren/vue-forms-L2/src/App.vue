@@ -24,6 +24,14 @@
         // EVENT OBJECT
         name: '',
         myName: '',
+
+        // P4.1 - Nieuwe variabele Message
+        message: '',
+        // P4.3 - Form elements met V-MODEL.
+        category: "green",
+        size: [],
+        checked: 'true',
+
       }
     },
     methods: {
@@ -80,6 +88,13 @@
         // Template literals voor output als string.
       },
 
+          //Methode om de alert te tonen
+    partOne(){
+      alert("De submit werkt toch al")
+    },
+    showMessage(event) {
+      this.message = event.target.value;
+    },
     }
   }
 </script>
@@ -132,7 +147,63 @@
     <p>Jouw naam {{ myName }}</p>
   </div>
 
+  <!-- OPDRACHTEN P4 - FORM -->
 
+    <!-- Formulier met event listener en een event modifier -->
+    <form class="form" v-on:submit.prevent="partOne()">
+      <div class="form-field">
+        <label for="message">Boodschap</label>
+
+        <!-- DEEL 2 event listener op de input om de Boodschap te tonen in de paragraaf eronder -->
+        <!-- <input type="text" name="message" id="message" v-on:input="showMessage($event)"> -->
+
+        <!-- DEEL 3 event listener om de Boodschap enkel te tonen wanneer er op de ENTER toets wordt geklikt -->
+        <input type="text" name="message" id="message" v-on:keydown.enter="showMessage($event)">
+
+        <p>{{ message }}</p>
+
+      </div>
+      <div class="form-submit">
+        <button>Verzend</button>
+      </div>
+    </form>
+
+    <!-- OPDRACHTEN P4 - FORM MET V-MODEL -->
+    <form class="form">
+      <!-- CATEGORIES v-model -->
+      <div>
+        <label for="color-category"></label>
+        <select v-model="category" name="color" id="color-category">
+          <option value="green">groen</option> 
+          <option value="red">rood</option>  
+          <option value="blue">blauw</option>  
+        </select>
+      </div>
+
+      <!-- CHECKBOXES v-model -->
+      <h3>Kledingmaat</h3>
+      <div>
+        <label for="S">Small</label>
+        <input v-model="size" value="S" type="checkbox" name="size" id="S">
+      </div>
+      <div>
+        <label for="M">Medium</label>
+        <input v-model="size" value="M" type="checkbox" name="size" id="M">
+      </div>
+
+      <div>
+        <label for="L">Large</label>
+        <input v-model="size" value="L" type="checkbox" name="size" id="L">
+      </div>
+      
+      <div>
+        <input type="checkbox" id="checkbox" v-model="checked" />
+        <label for="checkbox">{{ checked }}</label>
+      </div>
+
+
+
+    </form>
 
 </template>
 
