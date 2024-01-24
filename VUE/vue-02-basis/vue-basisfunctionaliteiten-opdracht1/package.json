@@ -1,0 +1,22 @@
+{
+  "name": "basisfunctionaliteiten",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.3.4",
+    "vite": "^4.4.9"
+  },
+  "description": "Vul het `main.js` bestand aan met de juiste code om een vue app aan te maken. Vul ook de ontbrekende code in het `index.html` bestand in.",
+  "main": "vite.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
